@@ -6,6 +6,9 @@ import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * 熔断 服务降级
+ */
 public class FileClientFallback implements FallbackFactory<FileClient> {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(FileClientFallback.class);

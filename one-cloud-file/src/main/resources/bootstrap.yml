@@ -18,9 +18,22 @@ spring:
         dashboard: 192.168.239.128:8080
         port: 8719  #默认8719，假如被占用了会自动从8719开始依次+1扫描。直至找到未被占用的端口
       eager: true
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.239.128:8848 #nginx代理后的地址
+            dataId: one-cloud-file-sentinel
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+            namespace: da995b0d-93b8-485b-8a7e-382fa4fb13b9
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
+feign:
+  sentinel:
+    enabled: true # 激活Sentinel对Feign的支持
