@@ -17,10 +17,7 @@ pwd
 rm -rf ${appSrc}
 
 cp one-cloud-file/target/${jarAppFile} ${appSrc}
-cp one-cloud-file/target/${jarAppFeignClient} ${appSrc}
-
-#移动执行命令
-cp deploy -rf ${appSrc}
+cp one-cloud-feign-client/target/${jarAppFeignClient} ${appSrc}
 
 echo ">>>>>move.sh finished<<<<<"
 
