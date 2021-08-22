@@ -1,5 +1,6 @@
 package com.lad.song.one.file.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.lad.song.one.common.common.Response;
 import com.lad.song.one.file.service.FileService;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -19,8 +20,13 @@ public class FileController {
     private FileService fileService;
 
     @GetMapping(value = "/query/{id}")
+    @SentinelResource(value = "file_query",blockHandler = "dealFileQuery")
     public Response query(@PathVariable("id") String id) {
         return fileService.queryFileById(id);
+    }
+
+    public Response dealFileQuery(String id) {
+        return new Response("990101", "访问人数过多啦!");
     }
 
 
