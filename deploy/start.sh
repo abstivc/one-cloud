@@ -20,7 +20,7 @@ logAppFileName=service_start_one-cloud-file_$(date "+%Y-%m-%d").log
 logAppFeignName=service_start_one-cloud-feign-client_$(date "+%Y-%m-%d").log
 
 
-logDir=${appSrc}/logs/
+logDir=/usr/local/application/logs/
 
 if [ ! -f "${logDir}" ]; then
         mkdir -p "${logDir}"
