@@ -11,14 +11,16 @@ jarAppFeignClient="one-cloud-feign-client-${version}.jar"
 if [ ! -x "${appSrc}" ]; then
         mkdir -p "${appSrc}"
 fi
+echo ">>>>>move.sh pwd<<<<<"
+pwd
 
 rm -rf ${appSrc}
 
-cp ../one-cloud-file/target/${jarAppFile} ${appSrc}
-cp ../one-cloud-file/target/${jarAppFeignClient} ${appSrc}
+cp one-cloud-file/target/${jarAppFile} ${appSrc}
+cp one-cloud-file/target/${jarAppFeignClient} ${appSrc}
 
 #移动执行命令
-cp ../deploy -rf ${appSrc}
+cp deploy -rf ${appSrc}
 
 echo ">>>>>move.sh finished<<<<<"
 
