@@ -4,9 +4,9 @@ echo ">>>>>start.sh started<<<<<"
 
 sh ./stop.sh
 
-appSrc=/usr/local/application/one-cloud
+appSrc=/usr/local/application/one-cloud/
 
-echo 'JAVA_HOME is' $JAVA_HOME
+echo 'JAVA_HOME is' $JAVA_HOMEappSrc
 echo 'PATH is' $PATH
 
 jarAppFile="one-cloud-file-1.0.0.jar"
@@ -32,8 +32,8 @@ fi
 
 
 #后端启动，并打印日志
-nohup java -jar ${appSrc}/${jarAppFile} --spring.profiles.active=stg > ${logAppFileDir}${logAppFileName} &
+nohup java -jar ${appSrc}${jarAppFile} --spring.profiles.active=stg > ${logAppFileDir}${logAppFileName} &
  #后端启动，并打印日志
-nohup java -jar ${appSrc}/${jarAppFeignClient} --spring.profiles.active=stg > ${logAppFeignDir}${logAppFeignName} &
+nohup java -jar ${appSrc}${jarAppFeignClient} --spring.profiles.active=stg > ${logAppFeignDir}${logAppFeignName} &
 
 echo ">>>>>start.sh end<<<<<"

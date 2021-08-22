@@ -4,7 +4,7 @@ echo ">>>>>move.sh started<<<<<"
 
 version=1.0.0
 
-appSrc=/usr/local/application/one-cloud
+appSrc=/usr/local/application/one-cloud/
 jarAppFile="one-cloud-file-${version}.jar"
 jarAppFeignClient="one-cloud-feign-client-${version}.jar"
 
