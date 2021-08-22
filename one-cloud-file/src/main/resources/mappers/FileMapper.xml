@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lad.song.one.file.dao.FileDao">
+    <insert id="saveFile">
+        <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="id">
+            select replace(UUID(), '-', '' )
+        </selectKey>
+        insert into
+            one_cloud_file (id, name, type, size, path, create_user)
+        values
+            (#{id}, #{name}, #{type}, #{size}, #{path}, #{createUser})
+    </insert>
+    <select id="queryFile" resultType="com.lad.song.one.file.entity.FileDo">
+        select
+             id, name, type, size, path,create_user, create_time, update_user, update_time,
+             CONCAT(#{downloadPrefix}, id) download_path
+        from
+            one_cloud_file
+        where
+              id = #{fileId}
+    </select>
+    <select id="queryFileList" resultType="com.lad.song.one.file.entity.FileDo">
+        select
+            id, name, type, size, path,create_user, create_time, update_user, update_time,
+            CONCAT(#{downloadPrefix}, id) download_path
+        from
+            one_cloud_file
+        <where>
+            <if test="name != null and name != ''">
+                and name like CONCAT(#{name}, '%')
+            </if>
+        </where>
+    </select>
+</mapper>

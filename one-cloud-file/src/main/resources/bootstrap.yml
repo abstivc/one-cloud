@@ -1,0 +1,26 @@
+#nacos 配置中心 + spring 配置
+spring:
+  application:
+    name: one-cloud-file
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.239.128:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
+        namespace: da995b0d-93b8-485b-8a7e-382fa4fb13b9
+      discovery:
+        server-addr: 192.168.239.128:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.239.128:8080
+        port: 8719  #默认8719，假如被占用了会自动从8719开始依次+1扫描。直至找到未被占用的端口
+      eager: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
