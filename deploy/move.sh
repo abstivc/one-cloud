@@ -17,8 +17,8 @@ echo ">>>>>move.sh pwd<<<<<"
 pwd
 
 
-cp ../one-cloud-file/target/${jarAppFile} ${appSrc}
-cp ../one-cloud-feign-client/target/${jarAppFeignClient} ${appSrc}
+cp one-cloud-file/target/${jarAppFile} ${appSrc}
+cp one-cloud-feign-client/target/${jarAppFeignClient} ${appSrc}
 
 echo ">>>>>move.sh finished<<<<<"
 
