@@ -16,18 +16,18 @@ jarAppFeignClient="one-cloud-feign-client-1.0.0.jar"
 # 日志名称和目录
 logAppFileName=service_start_${jarAppFile}_$(date "+%Y-%m-%d").log
 
-logAppFileDir=../logs/${jarAppFile}/
+logAppFileDir=${appSrc}/logs/${jarAppFile}/
 
-if [ ! -x "${logDir}" ]; then
-        mkdir -p "${logDir}"
+if [ ! -f "${logAppFileDir}" ]; then
+        mkdir -p "${logAppFileDir}"
 fi
 
 logAppFeignName=service_start_${jarAppFeignClient}_$(date "+%Y-%m-%d").log
 
-logAppFeignDir=../logs/${jarAppFeignClient}/
+logAppFeignDir=${appSrc}/logs/${jarAppFeignClient}/
 
-if [ ! -x "${logDir}" ]; then
-        mkdir -p "${logDir}"
+if [ ! -f "${logAppFeignDir}" ]; then
+        mkdir -p "${logAppFeignDir}"
 fi
 
 

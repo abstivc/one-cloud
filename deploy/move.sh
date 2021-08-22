@@ -8,7 +8,7 @@ appSrc=/usr/local/application/one-cloud/
 jarAppFile="one-cloud-file-${version}.jar"
 jarAppFeignClient="one-cloud-feign-client-${version}.jar"
 
-if [ ! -x "${appSrc}" ]; then
+if [ ! -d "${appSrc}" ]; then
         mkdir -p "${appSrc}"
 fi
 echo ">>>>>move.sh pwd<<<<<"
