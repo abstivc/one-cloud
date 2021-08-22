@@ -101,7 +101,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.lad.song.OneCloudFileApplication</mainClass>
+                    <mainClass>com.lad.song.one.file.OneCloudFileApplication</mainClass>
                     <skip>false</skip>
                 </configuration>
                 <executions>
