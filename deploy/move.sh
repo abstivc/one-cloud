@@ -8,16 +8,17 @@ appSrc=/usr/local/application/one-cloud/
 jarAppFile="one-cloud-file-${version}.jar"
 jarAppFeignClient="one-cloud-feign-client-${version}.jar"
 
+rm -rf ${appSrc}
+
 if [ ! -d "${appSrc}" ]; then
         mkdir -p "${appSrc}"
 fi
 echo ">>>>>move.sh pwd<<<<<"
 pwd
 
-rm -rf ${appSrc}
 
-cp one-cloud-file/target/${jarAppFile} ${appSrc}
-cp one-cloud-feign-client/target/${jarAppFeignClient} ${appSrc}
+cp ../one-cloud-file/target/${jarAppFile} ${appSrc}
+cp ../one-cloud-feign-client/target/${jarAppFeignClient} ${appSrc}
 
 echo ">>>>>move.sh finished<<<<<"
 
