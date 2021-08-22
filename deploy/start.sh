@@ -2,8 +2,9 @@
 # 2. 判断项目是否已经启动, 并按顺序启动所有目录
 echo ">>>>>start.sh started<<<<<"
 
-sh ./stop.sh
+sh deploy/stop.sh
 
+export BUILD_ID=dontKillMe
 appSrc=/usr/local/application/one-cloud/
 
 echo 'JAVA_HOME is' $JAVA_HOME
@@ -27,7 +28,9 @@ fi
 
 #后端启动，并打印日志
 nohup java -jar ${appSrc}${jarAppFile} --spring.profiles.active=stg > ${logDir}${logAppFileName} &
+echo "service启动中,对应的日志目录为${logDir}${logAppFileName}"
  #后端启动，并打印日志
 nohup java -jar ${appSrc}${jarAppFeignClient} --spring.profiles.active=stg > ${logDir}${logAppFeignName} &
+echo "service启动中,对应的日志目录为${logDir}${logAppFeignName}"
 
 echo ">>>>>start.sh end<<<<<"
