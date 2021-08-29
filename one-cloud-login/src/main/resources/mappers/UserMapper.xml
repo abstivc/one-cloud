@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lad.song.one.login.dao.UserDao">
+
+    <select id="queryUser" resultType="com.lad.song.one.login.entity.UserDo">
+        select id, name, email, phone_number,password from OneCloud.one_cloud_user where name = #{userName}
+                                                                   and password = #{password}
+    </select>
+</mapper>

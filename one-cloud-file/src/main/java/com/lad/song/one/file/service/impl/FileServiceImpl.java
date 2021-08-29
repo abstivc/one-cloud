@@ -30,7 +30,7 @@ public class FileServiceImpl implements FileService {
     public Response queryFileById(String id) {
         FileDo fileDo = fileDao.queryFile(id, defaultDownloadPrefix);
         if (fileDo != null) {
-            return new Response("000000", "查询失败", fileDo);
+            return new Response("000000", "查询成功", fileDo);
         } else {
             return new Response("000101", "资源不存在", timeOut);
         }
